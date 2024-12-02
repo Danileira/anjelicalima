@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Emagrecimento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Globais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f0f2f5, #e0e7ff);
+            color: #333;
+        }
+        
+        /* Container do Quiz */
+        .quiz-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        /* Estilos dos Botões */
+        .button-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(74, 144, 226, 0.3);
+        }
+        
+        button:hover {
+            background-color: #357abd;
+            box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        button:focus {
+            outline: none;
+        }
+        
+        /* Estilo do Resultado */
+        #result {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 30px;
+            display: none;
+        }
+        
+        #result a {
+            text-decoration: none;
+            color: #4a90e2;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        #result a:hover {
+            color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Descubra o Melhor Caminho para seu Emagrecimento</h1>
+        <div id="quiz-container">
+            <div class="question" id="question1">
+                <p>Qual é o seu principal objetivo de emagrecimento?</p>
+                <div class="button-container">
+                    <button onclick="nextQuestion(1)">Perder Peso</button>
+                    <button onclick="nextQuestion(1)">Ganhar Massa</button>
+                    <button onclick="nextQuestion(1)">Melhorar Saúde</button>
+                </div>
+            </div>
+            <div class="question" id="question2" style="display:none;">
+                <p>Qual o maior desafio que você enfrenta?</p>
+                <div class="button-container">
+                    <button onclick="nextQuestion(2)">Falta de Tempo</button>
+                    <button onclick="nextQuestion(2)">Dificuldade em Manter Dieta</button>
+                    <button onclick="nextQuestion(2)">Falta de Motivação</button>
+                </div>
+            </div>
+            <!-- Adicione mais perguntas conforme necessário -->
+        </div>
+        <div id="result">
+            <p>Baseado nas suas respostas, temos a solução ideal para você!</p>
+            <a href="https://go.hotmart.com/J96431345D?ap=facc" target="_blank">Veja a Solução</a>
+        </div>
+    </div>
+
+    <script>
+        function nextQuestion(currentQuestion) {
+            document.getElementById(`question${currentQuestion}`).style.display = 'none';
+            const nextQuestion = document.getElementById(`question${currentQuestion + 1}`);
+            if (nextQuestion) {
+                nextQuestion.style.display = 'block';
+            } else {
+                document.getElementById('result').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
